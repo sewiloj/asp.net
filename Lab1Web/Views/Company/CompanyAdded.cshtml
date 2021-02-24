@@ -1,8 +1,7 @@
 ﻿@model CompanyAddedViewModel
 
-<h1>Your Company was successfully added!</h1>
+<h2>Add new item</h2>
 
-<h5>Some stats:</h5>
-<div>Chars in name: @Model.NumberOfCharsInName</div>
-<div>Chars in description: @Model.NumberOfCharsInDescription</div>
-<div>Is the Company currently hidden: @(Model.IsHidden ? "yes" : "no")</div>
+<p>Congratulations!</p>
+
+<p>Your new item "@Model.Name" was successfully added to the system with the ID @Model.Id</p>

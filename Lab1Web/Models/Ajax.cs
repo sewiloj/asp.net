@@ -7,6 +7,6 @@ namespace NewBrandingStyle.Web.Models
 {
     public class Ajax
     {
-        public bool success { get; set; }
+        public bool Success { get; set; }
     }
 }

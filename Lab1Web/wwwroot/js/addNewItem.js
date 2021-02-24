@@ -4,22 +4,25 @@
     const formElement = document.forms[0];
 
     const addNewItem = async () => {
-        const formData = new FormData(document.getElementById('form'))
-        const data = {}
-
-        formData.forEach((key, value) => {
-            data[value] = value[key];
-        });
-
+        const formData = new FormData(formElement);
         const requestData = {
-            method: 'POST',
-            body: JSON.stringify(data)
+            Name: formData.get("Name"),
+            Description: formData.get("Description"),
+            IsVisible: formData.get("IsVisible") === "true" ? true : false,
         };
 
-        const responseFetch = await fetch('/api/Ajax', requestData);
-        const response = await responseFetch.json();
-        if (response.success) {
-            alertElement.style.display = 'block';
+        const response = await fetch("/api/ajax", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(requestData),
+        });
+
+        const responseJson = await response.json();
+
+        if (responseJson.success) {
+            alertElement.style.display = "block";
         }
     };
     buttons.addEventListener("click", () => {

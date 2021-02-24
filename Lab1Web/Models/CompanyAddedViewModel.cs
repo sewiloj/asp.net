@@ -7,8 +7,7 @@ namespace Lab1Web.Models
 {
     public class CompanyAddedViewModel
     {
-        public int NumberOfCharsInName { get; set; }
-        public int NumberOfCharsInDescription { get; set; }
-        public bool IsHidden { get; set; }
+        public int Id { get; set; }
+        public int Name { get; set; }
     }
 }
